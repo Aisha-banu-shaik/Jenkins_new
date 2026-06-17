@@ -20,6 +20,15 @@ pipeline {
             }
         }
 
+        
+stage('Check Java') {
+    steps {
+        sh 'java -version'
+        sh 'echo $JAVA_HOME'
+    }
+}
+
+
         stage('Deploy') {
             steps {
                 sh '''
