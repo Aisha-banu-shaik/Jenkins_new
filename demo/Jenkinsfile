@@ -18,7 +18,7 @@ pipeline {
             }
         }
 
-        stage('Deploy to EC2') {
+        stage('Deploy') {
             steps {
                 sh '''
                 scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/my_pem.pem target/demo-0.0.1-SNAPSHOT.jar ubuntu@32.236.235.29:/home/ubuntu/
@@ -31,4 +31,5 @@ pipeline {
             }
         }
     }
+
 }
