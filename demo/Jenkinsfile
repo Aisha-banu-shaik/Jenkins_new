@@ -1,12 +1,18 @@
 
+
 pipeline {
     agent any
 
     stages {
 
+        stage('Clone') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Building project...'
                 sh 'chmod +x mvnw'
                 sh './mvnw clean package'
             }
@@ -14,7 +20,6 @@ pipeline {
 
         stage('Deploy to EC2') {
             steps {
-                echo 'Deploying to EC2...'
                 sh '''
                 scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/my_pem.pem target/demo-0.0.1-SNAPSHOT.jar ubuntu@32.236.235.29:/home/ubuntu/
 
