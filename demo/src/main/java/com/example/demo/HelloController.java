@@ -37,6 +37,10 @@ public class HelloController {
 
             <h1>🌸 Welcome to the blossom 🌸</h1>
             <p>Fresh flowers for every occasion</p>
+            
+            <img src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg" width="250"/>
+            <img src="https://images.pexels.com/photos/1395964/pexels-photo-1395964.jpeg" width="250"/>
+            <img src="https://images.pexels.com/photos/1366913/pexels-photo-1366913.jpeg" width="250"/>
 
         </body>
         </html>
