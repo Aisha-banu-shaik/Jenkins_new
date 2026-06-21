@@ -11,17 +11,21 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                dir('demo') {
-                    sh 'chmod +x mvnw'
-                    sh './mvnw clean package'
-                    pkill -f 'demo-0.0.1-SNAPSHOT.jar' || true
-                    nohup java -jar demo-0.0.1-SNAPSHOT.jar > app.log 2>&1 &
+     
+stage('Build') {
+    steps {
+        dir('demo') {
+            sh 'chmod +x mvnw'
+            sh './mvnw clean package'
 
-                }
-            }
+            sh '''
+            pkill -f demo-0.0.1-SNAPSHOT.jar || true
+            nohup java -jar target/demo-0.0.1-SNAPSHOT.jar > app.log 2>&1 &
+            '''
         }
+    }
+}
+
 
         
 stage('Check Java') {
