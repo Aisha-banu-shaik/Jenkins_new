@@ -35,7 +35,7 @@ public class HelloController {
                 <a href="/contact">Contact</a>
             </nav>
 
-            <h1>🌸 Welcome to the blossom 🌸</h1>
+            <h1>🌸 Welcome to blossom 🌸</h1>
             <p>Fresh flowers for every occasion</p>
             
             <img src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg" width="250"/>
